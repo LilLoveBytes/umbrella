@@ -28,4 +28,14 @@ parsed_pweather = JSON.parse(pweather_response)
 # display the current temp and weather summary for the next hour
 current_temp = parsed_pweather['currently']['temperature']
 summary =  parsed_pweather['currently']['summary']
-puts "In #{user_location} it is currently #{current_temp} and #{summary}"
+puts "In #{user_location.capitalize} it is currently #{current_temp.to_i} degrees Fahrenheit and #{summary.downcase}"
+
+hourly = parsed_pweather['hourly']['data']
+
+
+# for each of the next 12 hours, if precipitation is greater than 10%
+# if so, 
+   # print "{x} hours from now, the probability for precipitation is {y}"
+   # "You might want to carry an umbrella"
+
+# if not, print "You probably wont need an umbrella today"
