@@ -28,7 +28,6 @@ parsed_pweather = JSON.parse(pweather_response)
 # display the current temp and weather summary for the next hour
 current_temp = parsed_pweather['currently']['temperature']
 summary =  parsed_pweather['currently']['summary'].downcase
-puts summary
 
 if summary == 'clear' || summary == 'cloudy'
    puts "You can expect #{summary} skies and #{current_temp.to_i} degree weather in #{user_location} today"
@@ -45,7 +44,7 @@ umbrella = false
 
 12.times do |i|
    probability = hourly[i+1]['precipProbability']*100
-   if probability > 3
+   if probability > 10
       puts "#{i+1} hour(s) from now, there is a #{probability.to_i} percent chance of precipitaion."
       umbrella = true
    end
